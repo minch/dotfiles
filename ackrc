@@ -1,0 +1,9 @@
+--type-set=ruby=.rake,.rsel,.builder,.common
+--type-set=cuke=.feature
+--type-set=haml=.haml
+--type-set=txt=.txt
+--type-set=sass=.sass,.scss
+--type-set=yml=.yml,.yaml
+--type-set=rabl=.rabl
+--type-set=hbars=.hbars
+--type-set=coffee=.coffee
