@@ -1,4 +1,4 @@
---type-set=ruby=.rake,.rsel,.builder,.common
+--type-set=ruby=.rake,.rsel,.builder,.common,.rb
 --type-set=cuke=.feature
 --type-set=haml=.haml
 --type-set=txt=.txt
