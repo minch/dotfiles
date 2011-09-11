@@ -1,6 +1,6 @@
 desc "link files"
 task :link_files do
-  %w[ ackrc vimrc.local gvimrc.local janus.rake ].each do |file|
+  %w[ ackrc vimrc.local gvimrc.local janus.rake irbrc pryrc railsrc ].each do |file|
     dest = File.expand_path("~/.#{file}")
     unless File.exist?(dest)
       puts "linking: #{file} -> #{dest}"
