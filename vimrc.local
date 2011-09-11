@@ -5,3 +5,5 @@ color desert
 au BufNewFile,BufRead *.hbars set ft=handlebars""
 au BufNewFile,BufRead *.hbs.erb set ft=handlebars""
 au BufRead,BufNewFile *.rabl setf ruby
+
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
