@@ -3,7 +3,8 @@ export ZSH=$HOME/.oh-my-zsh
 
 # Set to the name theme to load.
 # Look in ~/.oh-my-zsh/themes/
-export ZSH_THEME="minch-eastwood"
+#export ZSH_THEME="minch-eastwood"
+export ZSH_THEME="aussiegeek"
 
 # Set to this to use case-sensitive completion
 # export CASE_SENSITIVE="true"
@@ -21,9 +22,17 @@ plugins=(git ruby rails)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/Users/minch/.rvm/bin:/Users/minch/.rvm/bin:/opt/local/bin:/opt/local/sbin:/Users/minch/.rvm/gems/ree-1.8.7-2010.02/bin:/Users/minch/.rvm/gems/ree-1.8.7-2010.02@global/bin:/Users/minch/.rvm/rubies/ree-1.8.7-2010.02/bin:/opt/local/mysql/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/Users/minch/bin:/opt/bin:/usr/local/sphinx/bin:/opt/amazon/ec2/tools/bin:/Users/minch/scripts:/Users/minch/.gem/ruby/1.8/bin:/opt/local/libexec/git-core:/usr/local/share/git-core
+export PATH=/Users/minch/.rvm/bin:/Users/minch/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:n:/Users/minch/scripts
+
+alias lp3='cd ~/code/rails/lp3'
+alias deathstar='cd ~/code/rails/deathstar'
+
+export EDITOR="mvim -f"
+
+# history
+alias h='fc -l 1 | ack -i'
 
 if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
 
-alias lp3='cd ~/Dropbox/code/rails/lp3'
-alias deathstar='cd ~/code/rails/deathstar'
+# For Homebrew
+export PATH=/usr/local/bin:$PATH
