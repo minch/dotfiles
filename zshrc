@@ -25,5 +25,5 @@ export PATH=/Users/minch/.rvm/bin:/Users/minch/.rvm/bin:/opt/local/bin:/opt/loca
 
 if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
 
-alias lp3='cd ~/Dropbox/code/rails/lp3'
+alias lp3='cd ~/code/rails/lp3'
 alias deathstar='cd ~/code/rails/deathstar'
