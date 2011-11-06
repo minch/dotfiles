@@ -24,14 +24,15 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 export PATH=/Users/minch/.rvm/bin:/Users/minch/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:n:/Users/minch/scripts
 
-alias lp3='cd ~/code/rails/lp3'
-alias deathstar='cd ~/code/rails/deathstar'
-
 export EDITOR="mvim -f"
 
 # history
 alias h='fc -l 1 | ack -i'
 
+alias lp3='cd ~/code/rails/lp3'
+alias deathstar='cd ~/code/rails/deathstar'
+
+# rvm
 if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
 
 # For Homebrew
