@@ -1,0 +1,9 @@
+color desert
+
+" add hbars syntax highligting
+au BufNewFile,BufRead *.hbars set ft=handlebars""
+au BufNewFile,BufRead *.hbs.erb set ft=handlebars""
+au BufRead,BufNewFile *.rabl setf ruby
+
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/,*/coverage/rcov/*,*/log/*,*/tmp/*
+let g:ctrlp_jump_to_buffer = 0
