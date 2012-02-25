@@ -2,12 +2,10 @@
 Pry.config.editor = "gvim --nofork"
 
 # My pry is polite
-Pry.hooks = { :after_session => proc { puts "bye-bye" } }
+#Pry.hooks = { :after_session => proc { puts "bye-bye" } }
 
 # Prompt with ruby version
 Pry.prompt = [proc { |obj, nest_level| "#{RUBY_VERSION} (#{obj}):#{nest_level} > " }, proc { |obj, nest_level| "#{RUBY_VERSION} (#{obj}):#{nest_level} * " }]
-
-%w{map_by_method hirb}.each { |gem| require gem }
 
 # Toys methods
 # Stealed from https://gist.github.com/807492

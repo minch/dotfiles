@@ -7,3 +7,4 @@ au BufRead,BufNewFile *.rabl setf ruby
 
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/,*/coverage/rcov/*,*/log/*,*/tmp/*
 let g:ctrlp_jump_to_buffer = 0
+let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
