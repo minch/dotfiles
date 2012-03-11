@@ -5,8 +5,12 @@ au BufNewFile,BufRead *.hbars set ft=handlebars""
 au BufNewFile,BufRead *.hbs.erb set ft=handlebars""
 au BufRead,BufNewFile *.rabl setf ruby
 
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/,*/coverage/rcov/*,*/log/*,*/tmp/*
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+
+let g:ctrlp_custom_ignore = {
+	\ 'dir':  '\.git$\|\.hg$\|\.svn$\|log$\|coverage\/rcov',
+	\ 'file': '\.log$'
+	\ }
 
 let g:ctrlp_jump_to_buffer = 0
 let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
