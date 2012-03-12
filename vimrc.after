@@ -8,7 +8,7 @@ au BufRead,BufNewFile *.rabl setf ruby
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 let g:ctrlp_custom_ignore = {
-	\ 'dir':  '\.git$\|\.hg$\|\.svn$\|log$\|coverage\/rcov',
+	\ 'dir':  '\.git$\|\.hg$\|\.svn$\|log$\|coverage\/rcov\|tmp$',
 	\ 'file': '\.log$'
 	\ }
 
