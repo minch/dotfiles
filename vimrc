@@ -1,15 +1,19 @@
 "
-" Custom ~/.vimrc
+" Custom vimrc
 "
 " No janus or spf13 so this the only requirements are:
 "
-" o this file
+" o brew install macvim
+"
+"   NOTE: This configuration should work on linux
+"         w/gvim but is untested.
+"
+" o this file at ~/.vimrc
+"
 " o ~/.vim directory
 "
 
-
 set nocompatible
-colorscheme ir_black
 
 "
 " Vundle
@@ -41,13 +45,15 @@ Bundle "pangloss/vim-javascript"
 Bundle "wgibbs/vim-irblack"
 Bundle "jiangmiao/auto-pairs"
 Bundle "Shougo/neocomplcache"
-
-" TODO:  Figure out syntax highlighting (or lack thereof for coffeescript)
 Bundle "kchmck/vim-coffee-script"
+Bundle "majutsushi/tagbar"
 
 filetype plugin indent on         
 syntax enable                     
 runtime macros/matchit.vim
+
+" Color Scheme
+colorscheme ir_black
 
 " Misc
 set showcmd                       " Display incomplete commands.
