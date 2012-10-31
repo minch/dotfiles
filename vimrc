@@ -85,8 +85,8 @@ let mapleader = ","               " use comma (,) for leader
 inoremap jk <esc>
 
 " Syntax Highlighting
-au BufNewFile,BufRead *.hbars set ft=handlebars""
-au BufNewFile,BufRead *.hbs.erb set ft=handlebars""
+au BufNewFile,BufRead *.hbars set ft=handlebars
+au BufNewFile,BufRead *.hbs.erb set ft=handlebars
 au BufRead,BufNewFile *.rabl setf ruby
 
 " Ctrl-P Tweaks
@@ -179,6 +179,9 @@ nmap <leader>gp :Git push<CR>
 
 " Ack
 map <leader>f :Ack<space>
+
+" Tagbar
+nmap <leader>T :TagbarToggle<CR>
 
 " Custom Functions
 
