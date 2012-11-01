@@ -47,6 +47,7 @@ Bundle "jiangmiao/auto-pairs"
 Bundle "Shougo/neocomplcache"
 Bundle "kchmck/vim-coffee-script"
 Bundle "majutsushi/tagbar"
+Bundle "nono/vim-handlebars"
 
 filetype plugin indent on         
 syntax enable                     
@@ -85,8 +86,8 @@ let mapleader = ","               " use comma (,) for leader
 inoremap jk <esc>
 
 " Syntax Highlighting
-au BufNewFile,BufRead *.hbars set ft=handlebars
-au BufNewFile,BufRead *.hbs.erb set ft=handlebars
+au BufNewFile,BufRead *.hbars set ft=handlebars""
+au BufNewFile,BufRead *.hbs.erb set ft=handlebars""
 au BufRead,BufNewFile *.rabl setf ruby
 
 " Ctrl-P Tweaks
