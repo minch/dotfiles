@@ -6,5 +6,5 @@
 --type-set=sass=.sass,.scss
 --type-set=yml=.yml,.yaml
 --type-set=rabl=.rabl
---type-set=hbars=.hbars
+--type-set=hbars=.hbars,.hbs
 --type-set=coffee=.coffee
