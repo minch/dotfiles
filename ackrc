@@ -8,3 +8,4 @@
 --type-set=rabl=.rabl
 --type-set=hbars=.hbars,.hbs
 --type-set=coffee=.coffee
+--type-set=ejs=.ejs

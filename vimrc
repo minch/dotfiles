@@ -75,7 +75,8 @@ set title                         " Set the terminal's title
 set visualbell                    " No beeping.
 set nobackup                      " Don't make a backup before overwriting a file.
 set nowritebackup                 " And again.
-set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
+" set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
+set directory+=,~/tmp,$TMP
 set autowrite                     " write the file when switching buffers
 " prevent esc delays (http://ksjoberg.com/vim-esckeys.html)
 set noesckeys
@@ -88,6 +89,7 @@ inoremap jk <esc>
 " Syntax Highlighting
 au BufNewFile,BufRead *.hbars set ft=handlebars""
 au BufNewFile,BufRead *.hbs.erb set ft=handlebars""
+au BufNewFile,BufRead *.ejs set ft=handlebars""
 au BufRead,BufNewFile *.rabl setf ruby
 
 " Ctrl-P Tweaks
