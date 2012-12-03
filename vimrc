@@ -83,12 +83,15 @@ set noesckeys
 
 let mapleader = ","               " use comma (,) for leader
 
+" Highlighting
+au BufNewFile,BufRead *.ejs set filetype=html
+
 " don't use ESC so much
 inoremap jk <esc>
 
 " Syntax Highlighting
-au BufNewFile,BufRead *.hbars set ft=handlebars""
-au BufNewFile,BufRead *.hbs.erb set ft=handlebars""
+au BufNewFile,BufRead *.hbars set ft=handlebars
+au BufNewFile,BufRead *.hbs.erb set ft=handlebars
 au BufNewFile,BufRead *.ejs set ft=handlebars""
 au BufRead,BufNewFile *.rabl setf ruby
 
@@ -98,7 +101,6 @@ let g:ctrlp_custom_ignore = {
 	\ 'file': '\.log$'
 	\ }
 let g:ctrlp_jump_to_buffer = 0
-let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
 
 " Listchars
 set list                          " Show invisible characters
@@ -176,15 +178,21 @@ nmap <leader>t :CtrlPBufTag<CR>
 nmap <leader>gb :Gblame<CR>
 nmap <leader>gs :Gstatus<CR>
 nmap <leader>gd :Gdiff<CR>
+" close the Gdiff split
+nmap  <leader>gD :Gedit<CR><C-w>h :q<CR><C-w>k
 nmap <leader>gl :Glog<CR>
 nmap <leader>gc :Gcommit<CR>
 nmap <leader>gp :Git push<CR>
+nmap <leader>gw :Gwrite<CR>
+nmap <leader>gr :Gread<CR>
 
 " Ack
 map <leader>f :Ack<space>
 
 " Tagbar
 nmap <leader>T :TagbarToggle<CR>
+nmap <leader>To :TagbarOpen j<CR>
+let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
 
 " Custom Functions
 
