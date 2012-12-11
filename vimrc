@@ -303,3 +303,18 @@ let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 
 " end neocompletecache
+if executable('coffeetags')
+  let g:tagbar_type_coffee = {
+        \ 'ctagsbin' : 'coffeetags',
+        \ 'ctagsargs' : '--include-vars',
+        \ 'kinds' : [
+        \ 'f:functions',
+        \ 'o:object',
+        \ ],
+        \ 'sro' : ".",
+        \ 'kind2scope' : {
+        \ 'f' : 'object',
+        \ 'o' : 'object',
+        \ }
+        \ }
+endif
