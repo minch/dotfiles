@@ -128,13 +128,14 @@ set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*Cap
 if has('gui_running')
   set guioptions-=T           " remove the toolbar
   "set lines=40                " 40 lines of text instead of 24,
-  if has("gui_gtk2")
-    set guifont=Andale\ Mono\ Regular\ 14,Menlo\ Regular\ 14,Consolas\ Regular\ 14,Courier\ New\ Regular\ 14
-  else
-    set guifont=Andale\ Mono\ Regular:h14,Menlo\ Regular:h14,Consolas\ Regular:h14,Courier\ New\ Regular:h14
-  endif
+  "if has("gui_gtk2")
+  "  set guifont=Andale\ Mono\ Regular\ 13,Menlo\ Regular\ 13,Consolas\ Regular\ 13,Courier\ New\ Regular\ 13
+  "else
+  "  set guifont=Andale\ Mono\ Regular:h13,Menlo\ Regular:h13,Consolas\ Regular:h13,Courier\ New\ Regular:h13
+  "endif
   if has('gui_macvim')
     set transparency=5          " Make the window slightly transparent
+	set guifont=Monaco:h13
   endif
 else
   if &term == 'xterm' || &term == 'screen'
