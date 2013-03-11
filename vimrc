@@ -18,7 +18,7 @@ set nocompatible
 "
 " Vundle
 "
-filetype off                      
+filetype off
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -49,8 +49,8 @@ Bundle "kchmck/vim-coffee-script"
 Bundle "majutsushi/tagbar"
 Bundle "nono/vim-handlebars"
 
-filetype plugin indent on         
-syntax enable                     
+filetype plugin indent on
+syntax enable
 runtime macros/matchit.vim
 
 " Color Scheme
@@ -109,7 +109,7 @@ set listchars=tab:\ \             " a tab should display as "  ", trailing white
 set listchars+=trail:.            " show trailing spaces as dots
 " The character to show in the last column when wrap is
 " off and the line continues beyond the right of the screen
-set listchars+=extends:>          
+set listchars+=extends:>
 " The character to show in the last column when wrap is
 " off and the line continues beyond the right of the screen
 set listchars+=precedes:<
@@ -134,7 +134,7 @@ if has('gui_running')
   "  set guifont=Andale\ Mono\ Regular:h13,Menlo\ Regular:h13,Consolas\ Regular:h13,Courier\ New\ Regular:h13
   "endif
   if has('gui_macvim')
-    set transparency=5          " Make the window slightly transparent
+    set transparency=3          " Make the window slightly transparent
 	set guifont=Monaco:h13
   endif
 else
@@ -194,6 +194,13 @@ map <leader>f :Ack<space>
 nmap <leader>T :TagbarToggle<CR>
 nmap <leader>To :TagbarOpen j<CR>
 let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
+
+" Rails.vim
+" :Rpmodel and punit items
+" TODO:  This works but the best way would just be to append to
+" each respective path (persistence and unit)
+autocmd User Rails Rnavcommand pmodel    app/models/persistence
+autocmd User Rails Rnavcommand punit     test/unit   -suffix=_test.rb
 
 " Custom Functions
 
@@ -319,3 +326,72 @@ if executable('coffeetags')
         \ }
         \ }
 endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Test-running stuff
+" https://github.com/r00k/dotfiles/blob/master/vimrc
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! RunCurrentTest()
+  let in_test_file = match(expand("%"), '\(.feature\|_spec.rb\|_test.rb\)$') != -1
+  if in_test_file
+    call SetTestFile()
+
+    if match(expand('%'), '\.feature$') != -1
+      call SetTestRunner("!cucumber")
+      exec g:bjo_test_runner g:bjo_test_file
+    elseif match(expand('%'), '_spec\.rb$') != -1
+      call SetTestRunner("!rspec")
+      exec g:bjo_test_runner g:bjo_test_file
+    else
+      call SetTestRunner("!ruby -Itest")
+      exec g:bjo_test_runner g:bjo_test_file
+    endif
+  else
+    exec g:bjo_test_runner g:bjo_test_file
+  endif
+endfunction
+
+function! SetTestRunner(runner)
+  let g:bjo_test_runner=a:runner
+endfunction
+
+function! RunCurrentLineInTest()
+  " TODO:  Abstract test runner and allow it to be set to turn
+  call SetTestRunner("!ruby -Itest")
+  
+  let in_test_file = match(expand("%"), '\(.feature\|_spec.rb\|_test.rb\)$') != -1
+  if in_test_file
+    call SetTestFileWithLine()
+  end
+
+  exec g:bjo_test_runner g:bjo_test_file . ":" . g:bjo_test_file_line
+endfunction
+
+function! RunMatchingTest(pattern)
+  call SetTestFile()
+  " TODO:  Abstract test runner and allow it to be set to turn
+  call SetTestRunner("!turn -Itest")
+
+  exec g:bjo_test_runner g:bjo_test_file . " -n/" . a:pattern . "/"
+endfunction
+
+function! SetTestFile()
+  let g:bjo_test_file=@%
+endfunction
+
+function! SetTestFileWithLine()
+  let g:bjo_test_file=@%
+  let g:bjo_test_file_line=line(".")
+endfunction
+
+function! CorrectTestRunner()
+  if match(expand('%'), '\.feature$') != -1
+    return "cucumber"
+  elseif match(expand('%'), '_spec\.rb$') != -1
+    return "rspec"
+  else
+    return "ruby"
+  endif
+endfunction
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
