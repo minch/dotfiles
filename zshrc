@@ -24,7 +24,7 @@ plugins=(git ruby rails)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/Users/minch/.rvm/bin:/Users/minch/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:n:/Users/minch/scripts
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:n:/Users/minch/scripts
 
 export GIT_EDITOR="vim -f"
 export EDITOR="vim -f"
@@ -41,15 +41,12 @@ alias dropbox='cd /Volumes/Data/Users/minch/Dropbox/'
 # rspec and zsh playing nice
 alias rspec='nocorrect rspec'
 alias mvim='nocorrect mvim'
-
-# rvm
-# if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
-rvm use 1.9.3 --default
+alias bundle='nocorrect bundle'
 
 # For Homebrew
 export PATH=/usr/local/bin:$PATH
 
-# PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+eval "$(rbenv init -)"
