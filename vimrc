@@ -48,13 +48,14 @@ Bundle "Shougo/neocomplcache"
 Bundle "kchmck/vim-coffee-script"
 Bundle "majutsushi/tagbar"
 Bundle "nono/vim-handlebars"
+Bundle 'airblade/vim-gitgutter'
 
 filetype plugin indent on
 syntax enable
 runtime macros/matchit.vim
 
 " Color Scheme
-colorscheme ir_black
+colorscheme jellybeans
 
 " Misc
 set showcmd                       " Display incomplete commands.
