@@ -28,6 +28,9 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " Bundles
+Bundle "wgibbs/vim-irblack"
+Bundle "nanotech/jellybeans.vim"
+Bundle "tomasr/molokai"
 Bundle "tpope/vim-fugitive"
 Bundle "tpope/vim-rails"
 Bundle "tpope/vim-surround"
@@ -39,10 +42,8 @@ Bundle "Lokaltog/vim-powerline"
 Bundle "kana/vim-textobj-user"
 Bundle "nelstrom/vim-textobj-rubyblock"
 Bundle "benmills/vimux"
-Bundle "nanotech/jellybeans.vim"
 Bundle "tComment"
 Bundle "pangloss/vim-javascript"
-Bundle "wgibbs/vim-irblack"
 Bundle "jiangmiao/auto-pairs"
 Bundle "Shougo/neocomplcache"
 Bundle "kchmck/vim-coffee-script"
@@ -55,7 +56,7 @@ syntax enable
 runtime macros/matchit.vim
 
 " Color Scheme
-colorscheme jellybeans
+colorscheme molokai
 
 " Misc
 set showcmd                       " Display incomplete commands.

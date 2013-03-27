@@ -28,7 +28,7 @@ export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:n:/Users/m
 
 export GIT_EDITOR="vim -f"
 export EDITOR="vim -f"
-export VISUAL="mvim -f"
+export VISUAL="vim -f"
 
 # history
 alias h='fc -l 1 | ack -i'
