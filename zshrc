@@ -37,11 +37,13 @@ alias lp3='cd ~/code/rails/lp3'
 alias deathstar='cd ~/code/rails/deathstar'
 alias ryojin='cd ~/code/rails/ryojin'
 alias dropbox='cd /Volumes/Data/Users/minch/Dropbox/'
+alias do-chef='cd ~/code/chef/provisioning'
 
 # rspec and zsh playing nice
 alias rspec='nocorrect rspec'
 alias mvim='nocorrect mvim'
 alias bundle='nocorrect bundle'
+alias be='nocorrect bundle exec'
 
 # For Homebrew
 export PATH=/usr/local/bin:$PATH
