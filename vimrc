@@ -31,6 +31,7 @@ Bundle 'gmarik/vundle'
 Bundle "wgibbs/vim-irblack"
 Bundle "nanotech/jellybeans.vim"
 Bundle "tomasr/molokai"
+Bundle "altercation/vim-colors-solarized"
 Bundle "tpope/vim-fugitive"
 Bundle "tpope/vim-rails"
 Bundle "tpope/vim-surround"
@@ -56,7 +57,9 @@ syntax enable
 runtime macros/matchit.vim
 
 " Color Scheme
-colorscheme molokai
+let g:solarized_termcolors=256
+set background=dark
+colorscheme solarized
 
 " Misc
 set showcmd                       " Display incomplete commands.
