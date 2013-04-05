@@ -6,7 +6,7 @@ export ZSH=$HOME/.oh-my-zsh
 #export ZSH_THEME="minch-eastwood"
 #export ZSH_THEME="aussiegeek"
 #export ZSH_THEME="bira"
-export ZSH_THEME="crunch"
+export ZSH_THEME="agnoster"
 
 # Set to this to use case-sensitive completion
 # export CASE_SENSITIVE="true"
