@@ -44,6 +44,7 @@ alias rspec='nocorrect rspec'
 alias mvim='nocorrect mvim'
 alias bundle='nocorrect bundle'
 alias be='nocorrect bundle exec'
+alias ag='nocorrect ag'
 
 # For Homebrew
 export PATH=/usr/local/bin:$PATH
@@ -53,5 +54,8 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 # For rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
+
+# possibly for preventing window renames in tmux
+export DISABLE_AUTO_TITLE=true
 
 eval "$(rbenv init -)"
