@@ -86,6 +86,9 @@ set autowrite                     " write the file when switching buffers
 " prevent esc delays (http://ksjoberg.com/vim-esckeys.html)
 set noesckeys
 
+" use ag versus ack
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
 let mapleader = ","               " use comma (,) for leader
 
 " Highlighting
@@ -314,6 +317,10 @@ let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
+
+" handle clipboard more easily
+map <leader>y "*y
+map <leader>p "*p
 
 " end neocompletecache
 if executable('coffeetags')
