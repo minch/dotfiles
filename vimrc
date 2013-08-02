@@ -105,8 +105,8 @@ au BufRead,BufNewFile *.rabl setf ruby
 
 " Ctrl-P Tweaks
 let g:ctrlp_custom_ignore = {
-	\ 'dir':  '\.git$\|\.hg$\|\.svn$\|log$\|coverage\/rcov\|tmp$',
-	\ 'file': '\.log$'
+	\ 'dir':  '\.git$\|\.hg$\|\.svn$\|log$\|coverage\/rcov\|tmp$\|vendor/bundle',
+	\ 'file': '\.log$\|tags\|TAGS'
 	\ }
 let g:ctrlp_jump_to_buffer = 0
 

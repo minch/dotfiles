@@ -42,7 +42,8 @@ alias do-chef='cd ~/code/chef/provisioning'
 # rspec and zsh playing nice
 alias rspec='nocorrect rspec'
 alias mvim='nocorrect mvim'
-alias bundle='nocorrect bundle'
+# alias bundle='nocorrect bundle'
+alias l='ls -altr'
 alias be='nocorrect bundle exec'
 alias ag='nocorrect ag'
 
