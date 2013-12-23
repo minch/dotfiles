@@ -15,6 +15,9 @@
 
 set nocompatible
 
+" Enable copy and paste
+set clipboard=unnamed
+
 "
 " Vundle
 "
@@ -51,6 +54,7 @@ Bundle "kchmck/vim-coffee-script"
 Bundle "majutsushi/tagbar"
 Bundle "nono/vim-handlebars"
 Bundle 'airblade/vim-gitgutter'
+Bundle 'editorconfig/editorconfig-vim'
 
 filetype plugin indent on
 syntax enable

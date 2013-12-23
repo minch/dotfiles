@@ -34,10 +34,10 @@ export VISUAL="vim -f"
 alias h='fc -l 1 | ack -i'
 
 alias lp3='cd ~/code/rails/lp3'
-alias deathstar='cd ~/code/rails/deathstar'
+alias desk='cd ~/code/rails/desk'
 alias ryojin='cd ~/code/rails/ryojin'
 alias dropbox='cd /Volumes/Data/Users/minch/Dropbox/'
-alias do-chef='cd ~/code/chef/provisioning'
+alias kanaloa='cd ~/code/mobile/kanaloa'
 
 # rspec and zsh playing nice
 alias rspec='nocorrect rspec'
@@ -46,6 +46,11 @@ alias mvim='nocorrect mvim'
 alias l='ls -altr'
 alias be='nocorrect bundle exec'
 alias ag='nocorrect ag'
+
+alias dfs='nocorrect bundle exec desk-flow ticket start'
+alias dfsu='nocorrect bundle exec desk-flow ticket submit'
+alias dfc='nocorrect bundle exec desk-flow ticket complete'
+alias dfr='nocorrect bundle exec desk-flow ticket review'
 
 # For Homebrew
 export PATH=/usr/local/bin:$PATH
@@ -60,3 +65,5 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 export DISABLE_AUTO_TITLE=true
 
 eval "$(rbenv init -)"
+
+#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
