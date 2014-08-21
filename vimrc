@@ -23,40 +23,41 @@ set clipboard=unnamed
 "
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-" let vundle manage vundle
-" required!
-Bundle 'gmarik/vundle'
+" let vundle manage vundle, required!
+Plugin 'gmarik/Vundle.vim'
 
-" Bundles
-Bundle "wgibbs/vim-irblack"
-Bundle "nanotech/jellybeans.vim"
-Bundle "tomasr/molokai"
-Bundle "altercation/vim-colors-solarized"
-Bundle "tpope/vim-fugitive"
-Bundle "tpope/vim-rails"
-Bundle "tpope/vim-surround"
-Bundle "tpope/vim-endwise"
-Bundle "mileszs/ack.vim"
-Bundle "kien/ctrlp.vim"
-Bundle "ZoomWin"
-Bundle "Lokaltog/vim-powerline"
-Bundle "kana/vim-textobj-user"
-Bundle "nelstrom/vim-textobj-rubyblock"
-Bundle "benmills/vimux"
-Bundle "tComment"
-Bundle "pangloss/vim-javascript"
-Bundle "jiangmiao/auto-pairs"
-Bundle "Shougo/neocomplcache"
-Bundle "kchmck/vim-coffee-script"
-Bundle "majutsushi/tagbar"
-Bundle "nono/vim-handlebars"
-Bundle 'airblade/vim-gitgutter'
-Bundle 'editorconfig/editorconfig-vim'
+" Plugins
+Plugin 'wgibbs/vim-irblack'
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'tomasr/molokai'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-endwise'
+Plugin 'mileszs/ack.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'ZoomWin'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'kana/vim-textobj-user'
+Plugin 'nelstrom/vim-textobj-rubyblock'
+Plugin 'benmills/vimux'
+Plugin 'tComment'
+Plugin 'pangloss/vim-javascript'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'Shougo/neocomplcache'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'majutsushi/tagbar'
+Plugin 'nono/vim-handlebars'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'editorconfig/editorconfig-vim'
 
+call vundle#end()
 filetype plugin indent on
+
 syntax enable
 runtime macros/matchit.vim
 

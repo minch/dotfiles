@@ -34,7 +34,9 @@ export VISUAL="vim -f"
 alias h='fc -l 1 | ack -i'
 
 alias lp3='cd ~/code/rails/lp3'
-alias desk='cd ~/code/rails/desk'
+alias aa='cd ~/code/rails/assistly/desk'
+alias ma='cd ~/code/mobile/desk/mobile-android'
+alias mi='cd ~/code/mobile/desk/mobile-ios'
 alias ryojin='cd ~/code/rails/ryojin'
 alias dropbox='cd /Volumes/Data/Users/minch/Dropbox/'
 alias kanaloa='cd ~/code/mobile/kanaloa'
