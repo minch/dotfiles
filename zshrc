@@ -36,7 +36,7 @@ alias h='fc -l 1 | ack -i'
 alias lp3='cd ~/code/rails/lp3'
 alias aa='cd ~/code/rails/assistly/desk'
 alias ma='cd ~/code/mobile/desk/mobile-android'
-alias mi='cd ~/code/mobile/desk/mobile-ios'
+alias mi='cd ~/code/ios/assistly/mobile-ios'
 alias ryojin='cd ~/code/rails/ryojin'
 alias dropbox='cd /Volumes/Data/Users/minch/Dropbox/'
 alias kanaloa='cd ~/code/mobile/kanaloa'
@@ -60,12 +60,9 @@ export PATH=/usr/local/bin:$PATH
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-# For rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-
 # possibly for preventing window renames in tmux
 export DISABLE_AUTO_TITLE=true
 
-eval "$(rbenv init -)"
-
-#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
+chruby 2.1.5
