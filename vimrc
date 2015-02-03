@@ -54,6 +54,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'nono/vim-handlebars'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'heartsentwined/vim-emblem'
 
 call vundle#end()
 filetype plugin indent on
