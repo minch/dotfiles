@@ -33,13 +33,14 @@ export VISUAL="vim -f"
 # history
 alias h='fc -l 1 | ack -i'
 
-alias lp3='cd ~/code/rails/lp3'
-alias aa='cd ~/code/rails/assistly/desk'
-alias ma='cd ~/code/mobile/desk/mobile-android'
-alias mi='cd ~/code/ios/assistly/mobile-ios'
-alias ryojin='cd ~/code/rails/ryojin'
+alias lp='cd ~/code/lowpressure'
+alias ryojin='cd ~/code/lowpressure/ryojin'
+alias fujin='cd ~/code/lowpressure/fujin'
+alias arashi='cd ~/code/lowpressure/arashi'
 alias dropbox='cd /Volumes/Data/Users/minch/Dropbox/'
 alias kanaloa='cd ~/code/mobile/kanaloa'
+alias flabongo='cd ~/code/MatchbookLabs/flabongo'
+alias fde='cd ~/code/MatchbookLabs/flabongo-deploy'
 
 # rspec and zsh playing nice
 alias rspec='nocorrect rspec'
@@ -53,6 +54,9 @@ alias dfs='nocorrect bundle exec desk-flow ticket start'
 alias dfsu='nocorrect bundle exec desk-flow ticket submit'
 alias dfc='nocorrect bundle exec desk-flow ticket complete'
 alias dfr='nocorrect bundle exec desk-flow ticket review'
+
+# git aliases
+alias gfrh='git fetch && git reset --hard origin/$(git rev-parse --abbrev-ref HEAD)'
 
 # For Homebrew
 export PATH=/usr/local/bin:$PATH
