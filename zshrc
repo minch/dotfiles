@@ -56,6 +56,7 @@ alias dfc='nocorrect bundle exec desk-flow ticket complete'
 alias dfr='nocorrect bundle exec desk-flow ticket review'
 
 # git aliases
+alias gwd='git rev-parse --abbrev-ref HEAD'
 alias gfrh='git fetch && git reset --hard origin/$(git rev-parse --abbrev-ref HEAD)'
 
 # For Homebrew
