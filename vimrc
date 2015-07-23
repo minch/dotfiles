@@ -55,6 +55,7 @@ Plugin 'nono/vim-handlebars'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'heartsentwined/vim-emblem'
+Plugin 'rizzatti/dash.vim'
 
 call vundle#end()
 filetype plugin indent on

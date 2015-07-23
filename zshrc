@@ -63,11 +63,11 @@ alias gfrh='git fetch && git reset --hard origin/$(git rev-parse --abbrev-ref HE
 export PATH=/usr/local/bin:$PATH
 
 ### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+export PATH=/usr/local/heroku/bin:$PATH
 
 # possibly for preventing window renames in tmux
 export DISABLE_AUTO_TITLE=true
 
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
-chruby 2.1.5
+chruby 2.2.2
