@@ -69,6 +69,10 @@ export PATH=/usr/local/heroku/bin:$PATH
 # possibly for preventing window renames in tmux
 export DISABLE_AUTO_TITLE=true
 
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+nvm use 0.12.7
+
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
 chruby 2.2.2
