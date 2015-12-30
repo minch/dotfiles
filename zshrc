@@ -40,7 +40,9 @@ alias arashi='cd ~/code/lowpressure/arashi'
 alias dropbox='cd /Volumes/Data/Users/minch/Dropbox/'
 alias kanaloa='cd ~/code/mobile/kanaloa'
 alias flabongo='cd ~/code/MatchbookLabs/flabongo'
-alias fde='cd ~/code/MatchbookLabs/flabongo-deploy'
+alias fdeploy='cd ~/code/MatchbookLabs/flabongo-deploy'
+alias flabongod='bash ~/Dropbox/code/git/flabongo-dev.sh'
+alias flabongodcm='bash ~/Dropbox/code/git/flabongo-dev-cm.sh'
 
 # rspec and zsh playing nice
 alias rspec='nocorrect rspec'
