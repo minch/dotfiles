@@ -7,6 +7,7 @@ export ZSH=$HOME/.oh-my-zsh
 #export ZSH_THEME="aussiegeek"
 #export ZSH_THEME="bira"
 export ZSH_THEME="agnoster"
+#export ZSH_THEME="robbyrussell"
 
 # Set to this to use case-sensitive completion
 # export CASE_SENSITIVE="true"
@@ -61,6 +62,9 @@ alias dfr='nocorrect bundle exec desk-flow ticket review'
 alias gcb='git rev-parse --abbrev-ref HEAD'
 alias gfrh='git fetch && git reset --hard origin/$(git rev-parse --abbrev-ref HEAD)'
 alias unfpg='rm -fv /usr/local/var/postgres/postmaster.pid'
+alias gbbd='git checkout -b "$(gcb)-pre-rebase-$(date +%Y-%m-%d-%H-%M-%S)"'
+
+alias tmuxls='tmux ls 2> /dev/null'
 
 # For Homebrew
 export PATH=/usr/local/bin:$PATH
@@ -69,12 +73,8 @@ export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/heroku/bin:$PATH
 
 # possibly for preventing window renames in tmux
-export DISABLE_AUTO_TITLE=true
+#export NVM_DIR=~/.nvm
+#source $(brew --prefix nvm)/nvm.sh
+#nvm use 0.12.7
 
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
-nvm use 0.12.7
-
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
-chruby 2.2.2
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
