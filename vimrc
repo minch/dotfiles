@@ -56,6 +56,9 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'heartsentwined/vim-emblem'
 Plugin 'rizzatti/dash.vim'
+" Note:  had to install manually
+Plugin 'vim-scripts/dbext.vim'
+Plugin 'ahw/vim-pbcopy'
 
 call vundle#end()
 filetype plugin indent on
@@ -116,6 +119,7 @@ let g:ctrlp_custom_ignore = {
 	\ 'file': '\.log$\|tags\|TAGS'
 	\ }
 let g:ctrlp_jump_to_buffer = 0
+let g:ctrlp_max_files=0
 
 " Listchars
 set list                          " Show invisible characters
@@ -324,6 +328,10 @@ let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
+
+"dbext
+let g:dbext_default_profile_psql = 'type=PGSQL:host=localhost:port=5432:dbname=flabongo_development:user=minch'
+let g:dbext_default_profile = 'psql'
 
 " handle clipboard more easily
 map <leader>y "*y
