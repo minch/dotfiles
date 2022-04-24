@@ -1,80 +1,97 @@
-# Path to your oh-my-zsh configuration.
-export ZSH=$HOME/.oh-my-zsh
+#git commit -m "Updates for template edit with proper REST semantics." Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
-# Set to the name theme to load.
-# Look in ~/.oh-my-zsh/themes/
-#export ZSH_THEME="minch-eastwood"
-#export ZSH_THEME="aussiegeek"
-#export ZSH_THEME="bira"
-export ZSH_THEME="agnoster"
-#export ZSH_THEME="robbyrussell"
+export ZSH="/Users/minch/.oh-my-zsh"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
-# Set to this to use case-sensitive completion
-# export CASE_SENSITIVE="true"
-
-# Comment this out to disable weekly auto-update checks
-# export DISABLE_AUTO_UPDATE="true"
-
-# Uncomment following line if you want to disable colors in ls
-# export DISABLE_LS_COLORS="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git ruby rails)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:n:/Users/minch/scripts
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export GIT_EDITOR="vim -f"
-export EDITOR="vim -f"
-export VISUAL="vim -f"
+export EDITOR=/usr/bin/vim
 
-# history
-alias h='fc -l 1 | ack -i'
+eval "$(direnv hook zsh)"
 
-alias lp='cd ~/code/lowpressure'
-alias ryojin='cd ~/code/lowpressure/ryojin'
-alias fujin='cd ~/code/lowpressure/fujin'
-alias arashi='cd ~/code/lowpressure/arashi'
-alias dropbox='cd /Volumes/Data/Users/minch/Dropbox/'
-alias kanaloa='cd ~/code/mobile/kanaloa'
-alias flabongo='cd ~/code/MatchbookLabs/flabongo'
-alias fdeploy='cd ~/code/MatchbookLabs/flabongo-deploy'
-alias flabongod='bash ~/Dropbox/code/git/flabongo-dev.sh'
-alias flabongodcm='bash ~/Dropbox/code/git/flabongo-dev-cm.sh'
+eval "$(rbenv init -)"
+eval export PATH="/Users/minch/.jenv/shims:${PATH}"
+export JENV_SHELL=zsh
+export JENV_LOADED=1
+unset JAVA_HOME
+source '/usr/local/Cellar/jenv/0.5.3/libexec/libexec/../completions/jenv.zsh'
+jenv rehash 2>/dev/null
+jenv() {
+  typeset command
+  command="$1"
+  if [ "$#" -gt 0 ]; then
+    shift
+  fi
 
-# rspec and zsh playing nice
-alias rspec='nocorrect rspec'
-alias mvim='nocorrect mvim'
-# alias bundle='nocorrect bundle'
-alias l='ls -altr'
-alias be='nocorrect bundle exec'
-alias ag='nocorrect ag'
+  case "$command" in
+  enable-plugin|rehash|shell|shell-options)
+    eval `jenv "sh-$command" "$@"`;;
+  *)
+    command jenv "$command" "$@";;
+  esac
+}
 
-alias dfs='nocorrect bundle exec desk-flow ticket start'
-alias dfsu='nocorrect bundle exec desk-flow ticket submit'
-alias dfc='nocorrect bundle exec desk-flow ticket complete'
-alias dfr='nocorrect bundle exec desk-flow ticket review'
-
-# git aliases
 alias gcb='git rev-parse --abbrev-ref HEAD'
-alias gfrh='git fetch && git reset --hard origin/$(git rev-parse --abbrev-ref HEAD)'
-alias unfpg='rm -fv /usr/local/var/postgres/postmaster.pid'
 alias gbbd='git checkout -b "$(gcb)-pre-rebase-$(date +%Y-%m-%d-%H-%M-%S)"'
 
-alias tmuxls='tmux ls 2> /dev/null'
+# Music
+alias m="cd ~/Dropbox/Music/Sheet\ Music\ and\ Tabs"
 
-# For Homebrew
-export PATH=/usr/local/bin:$PATH
+alias hm='cd /Users/minch/code/heymarket/'
+alias hmd='cd /Users/minch/code/heymarket/dev'
+alias hmw='cd /Users/minch/code/heymarket/hm-web/'
+alias hmo="cd ~/code/heymarket/go/src/github.com/CommonSun/heymono"
+alias hmi='cd /Users/minch/code/heymarket/go/src/github.com/CommonSun/integrations/'
+alias hmg='cd /Users/minch/code/heymarket/go/src/github.com/CommonSun/go-ec2/'
+alias hmm="cd ~/code/heymarket/go/src/github.com/CommonSun/hm-management"
+alias aw="cd ~/code/heymarket/go/src/github.com/CommonSun/admin-web"
+alias umd='usql "postgres://heydev:heydev@localhost/main_development?sslmode=disable"'
+alias umt='usql "postgres://heydev:heydev@localhost/main_test?sslmode=disable"'
+alias pmt='psql -h localhost -Uheydev main_test'
+alias pmd='psql -h localhost -Uheydev main_development'
+alias pmdi='psql -h localhost -Uheydev service_development'
+alias pmdit='psql -h localhost -Uheydev service_test'
+alias pms='psql -h stag-enc.cfd7wruunyzh.us-west-1.rds.amazonaws.com -Uadam hm_staging'
+alias pmsi='psql -h stag-enc.cfd7wruunyzh.us-west-1.rds.amazonaws.com -Uadam integrations_staging'
+alias pmp='psql -h production-enc.cfd7wruunyzh.us-west-1.rds.amazonaws.com -Uadam -d maindb'
+alias pmi='psql -h integrations-production.cluster-cfd7wruunyzh.us-west-1.rds.amazonaws.com -Uhm_integrations -d integrations_production'
+alias pmpr='psql -h production-enc-read3.cfd7wruunyzh.us-west-1.rds.amazonaws.com -Uadam maindb'
+alias pmpri='psql -h production-enc-read3.cfd7wruunyzh.us-west-1.rds.amazonaws.com -Uadam integrations_production'
+alias tl='tmux list 2>&1 > /dev/null'
+alias tn='tmux new -s $1'
+alias ta='tmux attach -t $1'
+alias shd='ssh -i ~/.ssh/id_rsa-hm adam@172.31.6.133'
+alias l='lsd -altrh'
 
-### Added by the Heroku Toolbelt
-export PATH=/usr/local/heroku/bin:$PATH
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
 
-# possibly for preventing window renames in tmux
-#export NVM_DIR=~/.nvm
-#source $(brew --prefix nvm)/nvm.sh
-#nvm use 0.12.7
+export GOPATH=$HOME/code/heymarket/go
+export PATH="$GOPATH/src/github.com/CommonSun/heymono/bin:$PATH"
+export PATH=$PATH:$GOPATH/bin
 
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+export HM_ENV=local
+export HM_FRONTEND_PATH="~/code/heymarket/hm-web"
+
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
+eval "$(mcfly init zsh)"
+
+export PATH=$HOME/code/heymarket/heymono/bin:$PATH
+
+source /Users/minch/.config/broot/launcher/bash/br
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
