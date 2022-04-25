@@ -47,22 +47,21 @@ alias gbbd='git checkout -b "$(gcb)-pre-rebase-$(date +%Y-%m-%d-%H-%M-%S)"'
 # Music
 alias m="cd ~/Dropbox/Music/Sheet\ Music\ and\ Tabs"
 
-alias pmt='psql -h localhost -Uheydev main_test'
-alias pmd='psql -h localhost -Uheydev main_development'
-alias pmdi='psql -h localhost -Uheydev service_development'
-alias pmdit='psql -h localhost -Uheydev service_test'
+# alias pmt='psql -h localhost -Uheydev main_test'
+# alias pmd='psql -h localhost -Uheydev main_development'
+# alias pmdi='psql -h localhost -Uheydev service_development'
+# alias pmdit='psql -h localhost -Uheydev service_test'
 alias tl='tmux list 2>&1 > /dev/null'
 alias tn='tmux new -s $1'
 alias ta='tmux attach -t $1'
-alias shd='ssh -i ~/.ssh/id_rsa-hm adam@172.31.6.133'
 alias l='lsd -altrh'
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 
-export GOPATH=$HOME/code/heymarket/go
-export PATH="$GOPATH/src/github.com/CommonSun/heymono/bin:$PATH"
-export PATH=$PATH:$GOPATH/bin
+# export GOPATH=$HOME/code/heymarket/go
+# export PATH="$GOPATH/src/github.com/CommonSun/heymono/bin:$PATH"
+# export PATH=$PATH:$GOPATH/bin
 
 
 if command -v pyenv 1>/dev/null 2>&1; then
@@ -71,9 +70,6 @@ fi
 
 eval "$(mcfly init zsh)"
 
-export PATH=$HOME/code/heymarket/heymono/bin:$PATH
-
-source /Users/minch/.config/broot/launcher/bash/br
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
