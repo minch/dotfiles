@@ -47,26 +47,10 @@ alias gbbd='git checkout -b "$(gcb)-pre-rebase-$(date +%Y-%m-%d-%H-%M-%S)"'
 # Music
 alias m="cd ~/Dropbox/Music/Sheet\ Music\ and\ Tabs"
 
-alias hm='cd /Users/minch/code/heymarket/'
-alias hmd='cd /Users/minch/code/heymarket/dev'
-alias hmw='cd /Users/minch/code/heymarket/hm-web/'
-alias hmo="cd ~/code/heymarket/go/src/github.com/CommonSun/heymono"
-alias hmi='cd /Users/minch/code/heymarket/go/src/github.com/CommonSun/integrations/'
-alias hmg='cd /Users/minch/code/heymarket/go/src/github.com/CommonSun/go-ec2/'
-alias hmm="cd ~/code/heymarket/go/src/github.com/CommonSun/hm-management"
-alias aw="cd ~/code/heymarket/go/src/github.com/CommonSun/admin-web"
-alias umd='usql "postgres://heydev:heydev@localhost/main_development?sslmode=disable"'
-alias umt='usql "postgres://heydev:heydev@localhost/main_test?sslmode=disable"'
 alias pmt='psql -h localhost -Uheydev main_test'
 alias pmd='psql -h localhost -Uheydev main_development'
 alias pmdi='psql -h localhost -Uheydev service_development'
 alias pmdit='psql -h localhost -Uheydev service_test'
-alias pms='psql -h stag-enc.cfd7wruunyzh.us-west-1.rds.amazonaws.com -Uadam hm_staging'
-alias pmsi='psql -h stag-enc.cfd7wruunyzh.us-west-1.rds.amazonaws.com -Uadam integrations_staging'
-alias pmp='psql -h production-enc.cfd7wruunyzh.us-west-1.rds.amazonaws.com -Uadam -d maindb'
-alias pmi='psql -h integrations-production.cluster-cfd7wruunyzh.us-west-1.rds.amazonaws.com -Uhm_integrations -d integrations_production'
-alias pmpr='psql -h production-enc-read3.cfd7wruunyzh.us-west-1.rds.amazonaws.com -Uadam maindb'
-alias pmpri='psql -h production-enc-read3.cfd7wruunyzh.us-west-1.rds.amazonaws.com -Uadam integrations_production'
 alias tl='tmux list 2>&1 > /dev/null'
 alias tn='tmux new -s $1'
 alias ta='tmux attach -t $1'
@@ -80,8 +64,6 @@ export GOPATH=$HOME/code/heymarket/go
 export PATH="$GOPATH/src/github.com/CommonSun/heymono/bin:$PATH"
 export PATH=$PATH:$GOPATH/bin
 
-export HM_ENV=local
-export HM_FRONTEND_PATH="~/code/heymarket/hm-web"
 
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
